@@ -1,0 +1,57 @@
+﻿<Window x:Class="RecipeManagerWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Recipe Manager" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="Segoe UI">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Padding" Value="10,10" />
+            <Setter Property="Margin" Value="10,5" />
+            <Setter Property="Background" Value="#FF7B68EE" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" BlurRadius="5" ShadowDepth="2"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="ListBox">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Margin" Value="20" />
+            <Setter Property="BorderBrush" Value="#FF7B68EE" />
+            <Setter Property="BorderThickness" Value="1" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="20" />
+            <Setter Property="BorderBrush" Value="#FF7B68EE" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Background" Value="White" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="20">
+            <Button x:Name="btnEnterRecipe" Content="Enter Recipe" Click="BtnEnterRecipe_Click" />
+            <Button x:Name="btnDisplayRecipes" Content="Display Recipes" Click="BtnDisplayRecipes_Click" />
+            <Button x:Name="btnScaleRecipe" Content="Scale Recipe" Click="BtnScaleRecipe_Click" />
+            <Button x:Name="btnFilterByIngredient" Content="Filter by Ingredient" Click="BtnFilterByIngredient_Click" />
+            <Button x:Name="btnFilterByFoodGroup" Content="Filter by Food Group" Click="BtnFilterByFoodGroup_Click" />
+            <Button x:Name="btnFilterByMaxCalories" Content="Filter by Max Calories" Click="BtnFilterByMaxCalories_Click" />
+        </StackPanel>
+        <ListBox x:Name="lstRecipes" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Margin="20" FontSize="16" BorderThickness="1" BorderBrush="#FF7B68EE" />
+        <TextBox x:Name="txtOutput" Grid.Row="2" Grid.ColumnSpan="2" TextWrapping="Wrap" IsReadOnly="True" Margin="20" FontSize="14" BorderThickness="1" BorderBrush="#FF7B68EE" Background="White" />
+    </Grid>
+</Window>
